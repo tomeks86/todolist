@@ -2,6 +2,7 @@ package edu.tseidler.todo.datamodel;
 
 import edu.tseidler.Main;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -11,14 +12,13 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 import java.util.Locale;
 
 public class TodoData {
     private static TodoData instance = new TodoData();
     private String fileName = Main.class.getResource("todos.txt").getPath();
 
-    private List<TodoItem> todoItems;
+    private ObservableList<TodoItem> todoItems;
     private DateTimeFormatter formatter;
 
     public static TodoData getInstance() {
@@ -30,7 +30,7 @@ public class TodoData {
         loadTodos();
     }
 
-    public List<TodoItem> getTodoItems() {
+    public ObservableList<TodoItem> getTodoItems() {
         return todoItems;
     }
 

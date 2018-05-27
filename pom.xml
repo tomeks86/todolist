@@ -35,6 +35,7 @@
                     <archive>
                         <manifest>
                             <mainClass>edu.tseidler.Main</mainClass>
+                            <addClasspath>true</addClasspath>
                         </manifest>
                     </archive>
                 </configuration>

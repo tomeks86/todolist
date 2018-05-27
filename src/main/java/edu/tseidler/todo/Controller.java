@@ -30,7 +30,7 @@ public class Controller {
             handleSelection(newValue);
         });
 
-        todoListView.getItems().setAll(TodoData.getInstance().getTodoItems());
+        todoListView.setItems(TodoData.getInstance().getTodoItems());
         todoListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         todoListView.getSelectionModel().selectFirst();
     }
@@ -66,9 +66,12 @@ public class Controller {
     private void testForOKAndCancelButtons(ButtonType buttonType, FXMLLoader fxmlLoader) {
         if (buttonType == ButtonType.OK) {
             DialogController controller = fxmlLoader.getController();
-            TodoItem newItem = controller.processResults();
-            todoListView.getItems().setAll(TodoData.getInstance().getTodoItems());
-            todoListView.getSelectionModel().select(newItem);
+            try {
+                TodoItem newItem = controller.processResults();
+                todoListView.getSelectionModel().select(newItem);
+            } catch (IllegalArgumentException e) {
+
+            }
             System.out.println("OK pressed");
         } else if (buttonType == ButtonType.CANCEL)
             System.out.println("CANCEL pressed");
