@@ -1,4 +1,4 @@
-package edu.tseidler.todo;
+package edu.tseidler;
 
 import edu.tseidler.todo.datamodel.TodoData;
 import javafx.application.Application;

@@ -1,5 +1,6 @@
 package edu.tseidler.todo.datamodel;
 
+import edu.tseidler.Main;
 import javafx.collections.FXCollections;
 
 import java.io.BufferedReader;
@@ -15,7 +16,7 @@ import java.util.Locale;
 
 public class TodoData {
     private static TodoData instance = new TodoData();
-    private String fileName = "todos.txt";
+    private String fileName = Main.class.getResource("todos.txt").getPath();
 
     private List<TodoItem> todoItems;
     private DateTimeFormatter formatter;
