@@ -3,19 +3,20 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextArea?>
 <DialogPane fx:controller="edu.tseidler.todo.DialogController"
             xmlns:fx="http://javafx.com/fxml">
     <headerText>
-        instructions...
+        Enter new todo item...
     </headerText>
     <content>
         <GridPane vgap="10" hgap="10">
             <Label text="short desciption" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-            <TextField GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <TextField fx:id="shortDescriptionField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
             <Label text="details" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-            <TextField GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <TextArea fx:id="detailsArea" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
             <Label text="date" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-            <DatePicker GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            <DatePicker fx:id="deadlinePicker" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
         </GridPane>
     </content>
 </DialogPane>

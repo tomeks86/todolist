@@ -66,4 +66,8 @@ public class TodoData {
             e.printStackTrace();
         }
     }
+
+    public void addTodoItem(TodoItem todoItem) {
+        todoItems.add(todoItem);
+    }
 }
